@@ -1,19 +1,26 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Tareas</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-item *ngFor="let task of tasks">
+  <ion-list class="container">
+    <ion-card class="task" *ngFor="let task of tasks">
+      <div>
+        <ion-icon class="tick" color="light"
+        [name]="task.isCompleted ? 'checkmark-outline' : 'close-outline'"
+        [style.backgroundColor]="task.isCompleted ? 'green' : 'red'">
+        </ion-icon>
+      </div>
       <ion-label>
         <ion-title>{{ task.name }}</ion-title>
-        <p>{{ task.description }}</p>
         <p>Fecha límite: {{ task.dueDate }}</p>
-        <ion-title>Completada: {{task.isCompleted}}</ion-title>
+        <p>{{ task.description }}</p>
       </ion-label>
-    </ion-item>
+    </ion-card>
   </ion-list>
 </ion-content>
 
