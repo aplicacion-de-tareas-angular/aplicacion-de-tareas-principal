@@ -1,15 +1,19 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
+    <ion-title>Tareas</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">tasks</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let task of tasks">
+      <ion-label>
+        <ion-title>{{ task.name }}</ion-title>
+        <p>{{ task.description }}</p>
+        <p>Fecha límite: {{ task.dueDate }}</p>
+        <ion-title>Completada: {{task.isCompleted}}</ion-title>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
+
