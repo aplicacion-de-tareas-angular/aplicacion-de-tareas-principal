@@ -22,6 +22,13 @@ const routes: Routes = [
     path: 'tasks',
     loadChildren: () => import('./tasks/tasks.module').then( m => m.TasksPageModule)
   },
+  {
+    path: 'task-details',
+    loadChildren: () => import('./task-details/task-details.module').then( m => m.TaskDetailsPageModule)
+  },
+  { path: 'task-details/:id',
+    loadChildren: () => import('./task-details/task-details.module').then(m => m.TaskDetailsPageModule) 
+  },
 ];
 
 @NgModule({

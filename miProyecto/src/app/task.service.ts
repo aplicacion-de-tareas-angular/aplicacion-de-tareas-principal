@@ -13,8 +13,12 @@ export class TaskService {
     new Task(true, "03-11-2023", 'Testear Usuarios', 'Descripción de la tarea 4')
   ];
 
-  getTasks(){
+  getTasks() {
     return this.tasks;
+  }
+
+  getTaskById(id: number): Task | undefined {
+    return this.tasks.find(task => task.taskId === id);
   }
 
   constructor() { }

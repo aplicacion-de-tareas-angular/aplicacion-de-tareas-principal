@@ -19,6 +19,7 @@
         <ion-title>{{ task.name }}</ion-title>
         <p>Fecha límite: {{ task.dueDate }}</p>
         <p>{{ task.description }}</p>
+        <ion-button [routerLink]="['/task-details', task.taskId]">Ver detalles</ion-button>
       </ion-label>
     </ion-card>
   </ion-list>

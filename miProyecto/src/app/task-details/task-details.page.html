@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+   <ion-toolbar>
+     <ion-title>Detalles de Tarea</ion-title>
+   </ion-toolbar>
+ </ion-header>
+ 
+ <ion-content>
+   <form [formGroup]="taskForm">
+     <ion-item>
+       <ion-label position="stacked">Nombre de la tarea</ion-label>
+       <ion-input formControlName="name" readonly></ion-input>
+     </ion-item>
+ 
+     <ion-item>
+       <ion-label position="stacked">Descripción</ion-label>
+       <ion-input formControlName="description" readonly></ion-input>
+     </ion-item>
+ 
+     <ion-item>
+       <ion-label position="stacked">Fecha límite</ion-label>
+       <ion-input formControlName="dueDate" readonly></ion-input>
+     </ion-item>
+ 
+     <ion-item>
+       <ion-label position="stacked">Completada</ion-label>
+       <ion-checkbox formControlName="isCompleted" [disabled]="true"></ion-checkbox>
+     </ion-item>
+   </form>
+ </ion-content>
